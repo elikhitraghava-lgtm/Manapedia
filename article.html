@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ManaPedia Article</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>ManaPedia</h1>
+    <p>తెలుగులో మన జ్ఞాన భాండాగారం</p>
+</header>
+
+<main>
+    <a href="index.html">← ManaPedia Home</a>
+
+    <h2 id="articleTitle" style="margin-top: 25px;"></h2>
+
+    <hr style="margin: 15px 0;">
+
+    <p id="articleContent"></p>
+</main>
+
+<footer>
+    <p>© 2026 ManaPedia</p>
+</footer>
+
+<script>
+const articles = {
+    "భారతదేశం": "భారతదేశం దక్షిణ ఆసియాలో ఉన్న ఒక దేశం. ఇది ప్రపంచంలోని అతిపెద్ద ప్రజాస్వామ్య దేశాలలో ఒకటి.",
+    "తెలుగు": "తెలుగు ద్రావిడ భాషా కుటుంబానికి చెందిన భాష. తెలుగు ప్రధానంగా ఆంధ్రప్రదేశ్ మరియు తెలంగాణ రాష్ట్రాలలో మాట్లాడబడుతుంది.",
+    "సైన్స్": "సైన్స్ అనేది ప్రకృతి, విశ్వం మరియు వాటిలో జరిగే ప్రక్రియలను అధ్యయనం చేసే విజ్ఞాన రంగం.",
+    "టెక్నాలజీ": "టెక్నాలజీ అనేది శాస్త్రీయ జ్ఞానాన్ని ఉపయోగించి సమస్యలను పరిష్కరించడానికి రూపొందించిన పద్ధతులు మరియు సాధనాలు.",
+    "చరిత్ర": "చరిత్ర అనేది గతంలో జరిగిన సంఘటనలు, వ్యక్తులు మరియు సమాజాల గురించి అధ్యయనం చేసే విషయం."
+};
+
+const params = new URLSearchParams(window.location.search);
+const title = params.get("title");
+
+document.getElementById("articleTitle").textContent =
+    title || "Article";
+
+document.getElementById("articleContent").textContent =
+    articles[title] || "ఈ విషయం గురించి సమాచారం ఇంకా అందుబాటులో లేదు.";
+</script>
+
+</body>
+</html>
